@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy,Component} from '@angular/core';
+import { ChangeDetectionStrategy,Component, inject, signal} from '@angular/core';
 
 import { BotonComponent } from '../../Shared/Components/boton/boton.component';
 import {MatCardModule} from '@angular/material/card';
@@ -10,6 +10,9 @@ import {MatRadioModule} from '@angular/material/radio';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-login',
@@ -24,4 +27,13 @@ import {MatButtonModule} from '@angular/material/button';
 })
 export class LoginComponent {
   readonly hideRequiredControl = new FormControl(false);
+   hide = signal(true);
+    clickEvent(event: MouseEvent) {
+      this.hide.set(!this.hide());
+      event.stopPropagation();
+    }
+  private router =inject(Router);
+  registrarse(){
+    this.router.navigate(['/register']);
+  }
 }

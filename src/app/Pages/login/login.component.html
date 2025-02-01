@@ -10,12 +10,17 @@
       
       <div class="button-container">
           <button class="my-custom-button" mat-fab extended>
-              <mat-icon>favorite</mat-icon>
-              Github
+            <div class="button-filled">
+              <img class="icons" src="icons/github.png" alt="LogoGithub">
+              <p>Github</p> 
+            </div>
+             
             </button>
             <button class="my-custom-button"  mat-fab extended>
-              <mat-icon>favorite</mat-icon>
-              Google
+              <div class="button-filled">
+                <img class="icons" src="icons/google.png" alt="LogoGoogle">
+                <p>Google</p> 
+              </div>
             </button>
       </div>
 
@@ -26,29 +31,47 @@
       <mat-divider class="separator"></mat-divider>
       <mat-card-content>
           <h2 class="subtitle">Ingrese sus credenciales</h2>
-          <mat-form-field appearance="fill">
-            <mat-icon matPrefix >sentiment_very_satisfied</mat-icon>
+          <mat-form-field class="container-inputs"  appearance="outline">
+            <mat-icon matPrefix >mail</mat-icon>
               <mat-label>Correo</mat-label>
-              <input matInput placeholder="Correo">
+              <input  class="inputs" matInput placeholder="Correo">
              
             
             </mat-form-field>
             <br>
-            
-            <mat-form-field appearance="fill">
-              <mat-icon matPrefix >sentiment_very_satisfied</mat-icon>
+            <mat-form-field  class="container-inputs"  appearance="outline">
+              <mat-icon matPrefix >password</mat-icon>
               <mat-label>Contraseña</mat-label>
-              <input matInput placeholder="Contraseña">
              
+              <input matInput [type]="hide() ? 'password' : 'text'" />
+              <button
+              mat-icon-button
+              matSuffix
+              (click)="clickEvent($event)"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide()"
+              >
+              <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
             
             </mat-form-field>
             <br>
-            <mat-checkbox color="primary"  [formControl]="hideRequiredControl">Recuérdame</mat-checkbox>
+            <div class="container-remember">
+              <mat-checkbox class="checkbox-remember" color="primary"  [formControl]="hideRequiredControl">Recuérdame</mat-checkbox>
+            </div>
+         
 
       </mat-card-content>
       <mat-card-footer>
           <app-boton texto="Iniciar Sesión"></app-boton>
         
       </mat-card-footer>
+      
+  
     </mat-card>
+    <footer>
+      <a href="">¿Olvidaste tu contraseña?</a>
+      <a (click)="registrarse()">Registrarse</a>
+    </footer>
+
 </main>

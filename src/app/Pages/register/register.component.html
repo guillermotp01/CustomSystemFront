@@ -1,1 +1,86 @@
-<p>register works!</p>
+
+
+
+<main>
+
+    <h1 class="title">¡Bienvenido!</h1>
+    <mat-card class="card" appearance="outlined">
+        <mat-card-header class="header">
+          <mat-card-title class="subtitle">Iniciar Sesión con</mat-card-title>
+        
+        <div class="button-container">
+            
+            <button class="my-custom-button" mat-fab extended>
+              <div class="button-filled">
+                <img class="icons" src="icons/github.png" alt="LogoGithub">
+                <p>Github</p> 
+              </div>
+               
+              </button>
+              <button class="my-custom-button"  mat-fab extended>
+                <div class="button-filled">
+                  <img class="icons" src="icons/google.png" alt="LogoGoogle">
+                  <p>Google</p> 
+                </div>
+              </button>
+              
+        </div>
+  
+      
+  
+      
+        </mat-card-header>
+        <mat-divider class="separator"></mat-divider>
+        <mat-card-content>
+            <h2 class="subtitle">Registre sus credenciales</h2>
+            <mat-form-field class="container-inputs"  appearance="outline">
+                <mat-icon matPrefix >person</mat-icon>
+                  <mat-label>Usuario</mat-label>
+                  <input  class="inputs" matInput placeholder="Correo">
+                 
+                
+            </mat-form-field>
+            <br>
+            <mat-form-field class="container-inputs"  appearance="outline">
+              <mat-icon matPrefix >mail</mat-icon>
+                <mat-label>Correo</mat-label>
+                <input  class="inputs" matInput placeholder="Correo">
+               
+              
+              </mat-form-field>
+              <br>
+              
+              <mat-form-field  class="container-inputs"  appearance="outline">
+                <mat-icon matPrefix >password</mat-icon>
+                <mat-label>Contraseña</mat-label>
+               
+                <input matInput [type]="hide() ? 'password' : 'text'" />
+                <button
+                mat-icon-button
+                matSuffix
+                (click)="clickEvent($event)"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide()"
+                >
+                <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              
+              </mat-form-field>
+              <br>
+              <div class="container-remember">
+                <mat-checkbox class="checkbox-remember" color="primary" 
+                 [formControl]="hideRequiredControl">Estoy de acuerdo con la <a href="">Política de Privacidad</a></mat-checkbox>
+              </div>
+           
+  
+        </mat-card-content>
+        <mat-card-footer>
+            <app-boton texto="Registrase"></app-boton>
+          
+        </mat-card-footer>
+        
+    
+      </mat-card>
+    
+  
+  </main>

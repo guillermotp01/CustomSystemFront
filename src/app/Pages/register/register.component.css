@@ -1,0 +1,117 @@
+
+main{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 70vh;
+  }
+  .title{
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    margin-top: 70px;
+  }
+  .subtitle{
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  .button-container{
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    margin-bottom: 20px;
+  }
+  .card{
+    min-width: 560px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E3F2F6;
+    text-align: center;
+  }
+  .header{
+    flex-direction: column;
+  }
+  .separator{
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  .my-custom-button {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    border: 1px solid #BFD3D9 !important;
+    border-radius: 10px;
+    width: 146px;
+  
+  }
+  .button-filled{
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  .button-filled p {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #7FB3C1;
+    transition: opacity 0.3s ease; /* Transición para el color también */
+  }
+  .button-filled:hover {
+  
+    opacity: 0.8; /* Reduce la opacidad del botón */
+  }
+  
+  .icons{
+    width: 22px;
+  
+  }
+  .container-inputs{
+    width:350px ;
+  background-color: #FFFFFF;
+  height: 55px;
+  margin-bottom: 30px;
+  border: none;
+  }
+  .container-remember{
+    width: 100%;
+    display: flex;
+    align-items: end;
+  }
+  .checkbox-remember{
+    text-align: left;
+  }
+  
+  footer{
+    display: flex;
+    justify-content: space-between;
+    min-width: 560px;
+  }
+  footer a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 15px;
+    margin: 15px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease; 
+  }
+  
+  footer a:hover {
+  
+    transform: translateY(-5px);
+    opacity: 0.8;
+  }
+  .checkbox-remember a{
+    text-decoration: none;
+    color: #649BED;
+    font-weight: 500;
+    transform: opacity 0.3s ease;
+  }
+
+  .checkbox-remember a:hover{
+   opacity: 0.8;
+  }
