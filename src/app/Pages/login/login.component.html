@@ -1,0 +1,54 @@
+
+
+
+<main>
+
+  <h1 class="title">¡Bienvenido!</h1>
+  <mat-card class="card" appearance="outlined">
+      <mat-card-header class="header">
+        <mat-card-title class="subtitle">Iniciar Sesión con</mat-card-title>
+      
+      <div class="button-container">
+          <button class="my-custom-button" mat-fab extended>
+              <mat-icon>favorite</mat-icon>
+              Github
+            </button>
+            <button class="my-custom-button"  mat-fab extended>
+              <mat-icon>favorite</mat-icon>
+              Google
+            </button>
+      </div>
+
+    
+
+    
+      </mat-card-header>
+      <mat-divider class="separator"></mat-divider>
+      <mat-card-content>
+          <h2 class="subtitle">Ingrese sus credenciales</h2>
+          <mat-form-field appearance="fill">
+            <mat-icon matPrefix >sentiment_very_satisfied</mat-icon>
+              <mat-label>Correo</mat-label>
+              <input matInput placeholder="Correo">
+             
+            
+            </mat-form-field>
+            <br>
+            
+            <mat-form-field appearance="fill">
+              <mat-icon matPrefix >sentiment_very_satisfied</mat-icon>
+              <mat-label>Contraseña</mat-label>
+              <input matInput placeholder="Contraseña">
+             
+            
+            </mat-form-field>
+            <br>
+            <mat-checkbox color="primary"  [formControl]="hideRequiredControl">Recuérdame</mat-checkbox>
+
+      </mat-card-content>
+      <mat-card-footer>
+          <app-boton texto="Iniciar Sesión"></app-boton>
+        
+      </mat-card-footer>
+    </mat-card>
+</main>

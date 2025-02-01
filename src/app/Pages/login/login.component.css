@@ -1,0 +1,46 @@
+main{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 70vh;
+}
+.title{
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+.subtitle{
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.button-container{
+  width: 100%;
+  display: flex;
+  gap: 50px;
+  margin-bottom: 20px;
+}
+.card{
+  min-width: 560px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E3F2F6;
+  text-align: center;
+}
+.header{
+  flex-direction: column;
+}
+.separator{
+  width: 100%;
+  margin-bottom: 25px;
+}
+.my-custom-button {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border: 1px solid #BFD3D9 !important;
+  border-radius: 10px;
+  width: 146px;
+}
