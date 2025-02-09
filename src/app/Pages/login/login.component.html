@@ -1,77 +1,76 @@
-
-
-
 <main>
-
   <h1 class="title">¡Bienvenido!</h1>
   <mat-card class="card" appearance="outlined">
-      <mat-card-header class="header">
-        <mat-card-title class="subtitle">Iniciar Sesión con</mat-card-title>
-      
+    <mat-card-header class="header">
+      <mat-card-title class="subtitle">Iniciar Sesión con</mat-card-title>
       <div class="button-container">
           <button class="my-custom-button" mat-fab extended>
             <div class="button-filled">
               <img class="icons" src="icons/github.png" alt="LogoGithub">
               <p>Github</p> 
             </div>
-             
-            </button>
-            <button class="my-custom-button"  mat-fab extended>
-              <div class="button-filled">
-                <img class="icons" src="icons/google.png" alt="LogoGoogle">
-                <p>Google</p> 
-              </div>
-            </button>
-      </div>
-
-    
-
-    
-      </mat-card-header>
-      <mat-divider class="separator"></mat-divider>
-      <mat-card-content>
-          <h2 class="subtitle">Ingrese sus credenciales</h2>
-          <mat-form-field class="container-inputs"  appearance="outline">
-            <mat-icon matPrefix >mail</mat-icon>
-              <mat-label>Correo</mat-label>
-              <input  class="inputs" matInput placeholder="Correo">
-             
-            
-            </mat-form-field>
-            <br>
-            <mat-form-field  class="container-inputs"  appearance="outline">
-              <mat-icon matPrefix >password</mat-icon>
-              <mat-label>Contraseña</mat-label>
-             
-              <input matInput [type]="hide() ? 'password' : 'text'" />
-              <button
-              mat-icon-button
-              matSuffix
-              (click)="clickEvent($event)"
-              [attr.aria-label]="'Hide password'"
-              [attr.aria-pressed]="hide()"
-              >
-              <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
-            
-            </mat-form-field>
-            <br>
-            <div class="container-remember">
-              <mat-checkbox class="checkbox-remember" color="primary"  [formControl]="hideRequiredControl">Recuérdame</mat-checkbox>
+          </button>
+          <button class="my-custom-button"  mat-fab extended>
+            <div class="button-filled">
+              <img class="icons" src="icons/google.png" alt="LogoGoogle">
+              <p>Google</p> 
             </div>
-         
+          </button>
+      </div>
+    </mat-card-header>
 
-      </mat-card-content>
-      <mat-card-footer>
-          <app-boton texto="Iniciar Sesión"></app-boton>
-        
-      </mat-card-footer>
-      
-  
-    </mat-card>
-    <footer>
-      <a href="">¿Olvidaste tu contraseña?</a>
-      <a (click)="registrarse()">Registrarse</a>
-    </footer>
+    <mat-divider class="separator"></mat-divider>
+    <mat-card-content>
+      <h2 class="subtitle">Ingrese sus credenciales</h2>
+    
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="container-inputs" appearance="outline">
+          <mat-icon matPrefix>Person</mat-icon>
+          <mat-label>Username</mat-label>
+          <input 
+            matInput 
+            placeholder="Username" 
+            formControlName="username"
+            type="text"
+          />
+          <mat-error *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+            Ingrese un username válido.
+          </mat-error>
+        </mat-form-field>
+    
+        <mat-form-field class="container-inputs" appearance="outline">
+          <mat-icon matPrefix>lock</mat-icon>
+          <mat-label>Contraseña</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" />
+          <button
+            mat-icon-button
+            matSuffix
+            type="button"
+            (click)="togglePasswordVisibility()"
+            [attr.aria-label]="'Mostrar/Ocultar contraseña'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+          
+          <mat-error *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+            La contraseña es requerida.
+          </mat-error>
+        </mat-form-field>        
+    
+        <div class="container-remember">
+          <mat-checkbox color="primary" formControlName="rememberMe">Recuérdame</mat-checkbox>
+        </div>
+    
+        <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">
+          Iniciar sesión
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
 
+  <footer>
+    <a href="">¿Olvidaste tu contraseña?</a>
+    <a (click)="register()">Registrarse</a>
+  </footer>
 </main>
