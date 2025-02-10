@@ -37,7 +37,7 @@
             Ingrese un username válido.
           </mat-error>
         </mat-form-field>
-    
+        <br>
         <mat-form-field class="container-inputs" appearance="outline">
           <mat-icon matPrefix>lock</mat-icon>
           <mat-label>Contraseña</mat-label>
@@ -62,7 +62,7 @@
           <mat-checkbox color="primary" formControlName="rememberMe">Recuérdame</mat-checkbox>
         </div>
     
-        <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">
+        <button class="button1" mat-raised-button  type="submit" [disabled]="loginForm.invalid">
           Iniciar sesión
         </button>
       </form>

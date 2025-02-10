@@ -1,6 +1,31 @@
 
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
 *{
     font-family: 'Poppins', sans-serif;
 }
+mat-toolbar {
+    background-color: #2b62c8;
+    color: #ffffff;
+  }
+  
+  mat-sidenav {
+    width: 200px;
+    border-right: none;
+    padding: 16px 0;
+  }
+   
+   .content {
+    height: calc(100svh - 98px);
+    border-radius: 10px;
+    padding: 16px;
+    max-width: 1520px;
+    margin: 0 auto;
+    font-size: 16px;
+  }  
+  
+  mat-sidenav-container {
+    height: calc(100svh - 65px);
+  }
+  

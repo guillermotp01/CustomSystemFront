@@ -1,0 +1,15 @@
+.container {
+    background-color: #db1313;
+    padding: 20px;
+    height: calc(100% - 40px);
+  }
+  
+    .content {
+      height: calc(100svh - 98px);
+      border-radius: 10px;
+      padding: 16px;
+      max-width: 1520px;
+      margin: 0 auto;
+      font-size: 16px;
+    } 
+    
