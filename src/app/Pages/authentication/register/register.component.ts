@@ -1,12 +1,16 @@
 import { ChangeDetectionStrategy,Component, OnInit, signal} from '@angular/core';
 
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { RegisterService } from '../../Services/register.service';
-import { userDto } from '../../Models/Dtos/UserDto/userDto';
+
 import { Router } from '@angular/router';
+import { RegisterService } from '../../../Services/register.service';
+import { userDto } from '../../../Models/Dtos/UserDto/userDto';
+import { SharedMaterialModule } from '../../../app.component.module';
 
 @Component({
   selector: 'app-register',
+  standalone: true,
+  imports:[SharedMaterialModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'

@@ -19,12 +19,14 @@ import { LayoutModule } from '@angular/cdk/layout';
 
 
 // Componentes
-import { LoginComponent } from './Pages/login/login.component';
-import { RegisterComponent } from './Pages/register/register.component';
+
 import { BotonComponent } from './Shared/Components/Button/boton.component';
 
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { AppComponent } from './app.component';
+
+import { LoginComponent } from './Pages/authentication/login/login.component';
+import { RegisterComponent } from './Pages/authentication/register/register.component';
 
 @NgModule({
   imports: [
@@ -58,8 +60,8 @@ import { AppComponent } from './app.component';
     MatSidenavModule,
     MatListModule,
     LayoutModule,
-    LoginComponent,
-    RegisterComponent,
+    // LoginComponent,
+    // RegisterComponent,
     BotonComponent,
   
     DashboardComponent,
@@ -68,8 +70,8 @@ import { AppComponent } from './app.component';
  
   ],
   declarations: [
-    LoginComponent,
-    RegisterComponent,
+    // LoginComponent,
+    // RegisterComponent,
     BotonComponent,
     DashboardComponent
  

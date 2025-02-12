@@ -1,34 +1,3 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<mat-toolbar *ngIf="esLogin" > >
-    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
-      <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
-      <mat-icon *ngIf="sidenav.opened">close</mat-icon>
-    </button>
-    My Page
-  </mat-toolbar>
-  <mat-sidenav-container  >
-    <mat-sidenav  *ngIf="esLogin" #sidenav>
-
-      <mat-nav-list>
-        <mat-list-item (click)="sidenav.mode === 'over' && sidenav.toggle()" routerLink="/login">
-          <mat-icon matListItemIcon>home</mat-icon>
-          Home
-        </mat-list-item>
-        <mat-list-item (click)="sidenav.mode === 'over' && sidenav.toggle()" routerLink="/register">
-          <mat-icon matListItemIcon>person</mat-icon>
-          Pofile
-        </mat-list-item>
-        <mat-list-item (click)="sidenav.mode === 'over' && sidenav.toggle()" routerLink="/about">
-          <mat-icon matListItemIcon>info</mat-icon>
-          About
-        </mat-list-item>
-      </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content >
-      <div class="content">
-        <router-outlet  ></router-outlet>
-      </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-  
+ <router-outlet  ></router-outlet>
+   

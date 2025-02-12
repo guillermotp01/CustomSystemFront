@@ -2,10 +2,14 @@ import { ChangeDetectionStrategy,Component, OnInit} from '@angular/core';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from '../../Services/login.service';
+import { LoginService } from '../../../Services/login.service';
+import { SharedMaterialModule } from '../../../app.component.module';
+
 
 @Component({
   selector: 'app-login',
+ standalone: true,
+ imports: [SharedMaterialModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'

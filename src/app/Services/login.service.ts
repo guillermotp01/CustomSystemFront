@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../Environment/environment';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError, timeout } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,4 +17,14 @@ export class LoginService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     });
   }
+
+  getAuthToken(): string | null {
+    if (typeof window !== 'undefined') {  // Verifica si estamos en el navegador
+      return localStorage.getItem('token');
+    }
+    return null;
+  }
+  
+  
+
 }
